@@ -1,14 +1,14 @@
 package geomatric;
 
 
-public class Geometric {
+public class Shape {
     private String color;
-    private String filled;
+    private boolean filled = true;
 
-    public Geometric() {
+    public Shape() {
     }
 
-    public Geometric(String color, String filled) {
+    public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
@@ -21,19 +21,19 @@ public class Geometric {
         this.color = color;
     }
 
-    public String getFilled() {
+    public boolean isFilled() {
         return filled;
     }
 
-    public void setFilled(String filled) {
+    public void setFilled(boolean filled) {
         this.filled = filled;
     }
 
     @Override
     public String toString() {
-        return "Geometric{" +
-                "color='" + color + '\'' +
-                ", filled='" + filled + '\'' +
-                '}';
+        return "A Shape with color of "
+                + getColor()
+                + " and "
+                + (isFilled() ? "filled" : "not filled");
     }
 }
