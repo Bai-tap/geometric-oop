@@ -1,8 +1,8 @@
 package geomatric.Circle;
 
-import geomatric.Geometric;
+import geomatric.Shape;
 
-public class Circle extends Geometric{
+public class Circle extends Shape {
     private double radius;
 
     public Circle() {
@@ -12,10 +12,9 @@ public class Circle extends Geometric{
         this.radius = radius;
     }
 
-    public Circle(double radius, String color, String filled) {
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
         this.radius = radius;
-        setColor(color);
-        setFilled(filled);
     }
 
     public double getRadius() {
@@ -38,15 +37,11 @@ public class Circle extends Geometric{
         return 2 * radius * 3.14;
     }
 
-    public void printCircle() {
-        System.out.println("The " + getColor() + " circle is created with radius is: " + radius);
-    }
-
     @Override
     public String toString() {
-        return "Circle {" +
-                "color='" + super.getColor() + '\'' +
-                ", filled='" + super.getFilled() + '\'' + ", radius = " +
-                '}';
+        return "A Circle with radius = "
+                + getRadius()
+                + ", which is a subclass of "
+                + super.toString();
     }
 }
